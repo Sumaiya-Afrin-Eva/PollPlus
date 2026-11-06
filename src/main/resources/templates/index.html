@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PollPulse | Campus Elections</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="/" class="logo">Poll<span>Pulse.</span></a>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
+        <a th:href="@{/login}" class="login-btn">Login</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="tag">Your Voice. Your Choice.</div>
+
+        <h1>
+            Make Your Voice
+            <span>Count.</span>
+        </h1>
+
+        <p>
+            Welcome to PollPulse, a secure and transparent campus
+            election platform. Participate in student elections,
+            choose your representatives, and make every vote count.
+        </p>
+
+        <div class="hero-buttons">
+            <a th:href="@{/login}" class="primary-btn">Vote Now →</a>
+            <a href="#how-it-works" class="secondary-btn">Learn More</a>
+        </div>
+
+    </div>
+
+    <!-- Voting Preview -->
+    <div class="hero-visual">
+
+        <div class="visual-header">
+            <h3>Campus Election</h3>
+            <span class="active-label">● Active</span>
+        </div>
+
+        <div class="candidate">
+            <div class="avatar">A</div>
+            <div class="candidate-info">
+                <h4>Candidate A</h4>
+                <p>President Candidate</p>
+            </div>
+            <span class="vote-icon">✓</span>
+        </div>
+
+        <div class="candidate">
+            <div class="avatar">B</div>
+            <div class="candidate-info">
+                <h4>Candidate B</h4>
+                <p>President Candidate</p>
+            </div>
+            <span class="vote-icon">✓</span>
+        </div>
+
+        <div class="candidate">
+            <div class="avatar">C</div>
+            <div class="candidate-info">
+                <h4>Candidate C</h4>
+                <p>President Candidate</p>
+            </div>
+            <span class="vote-icon">✓</span>
+        </div>
+
+        <div class="secure-note">
+            🔒 Your vote is private and securely recorded.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Features -->
+<section class="features" id="features">
+
+    <h2 class="section-title">Why PollPulse?</h2>
+
+    <p class="section-description">
+        Everything needed for a fair, secure, and transparent campus election.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure Voting</h3>
+            <p>
+                Hashed voter tokens help protect voter privacy
+                and prevent unauthorized voting.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">✓</div>
+            <h3>One Person, One Vote</h3>
+            <p>
+                Every eligible voter can cast exactly one vote
+                for each election position.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Transparent Results</h3>
+            <p>
+                Election results remain hidden until the election
+                is closed and officially published.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3>Audit Trail</h3>
+            <p>
+                Tamper-evident audit logs help maintain
+                accountability and election integrity.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works" id="how-it-works">
+
+    <h2 class="section-title">How It Works</h2>
+
+    <p class="section-description">
+        Participating in your campus election is simple.
+    </p>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Login</h3>
+            <p>Sign in using your authorized voter account.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Choose Candidates</h3>
+            <p>Explore candidates for each available position.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Cast Your Vote</h3>
+            <p>Submit your vote securely for each position.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>View Results</h3>
+            <p>See official results after the election is closed and published.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Security -->
+<section class="security" id="about">
+
+    <div class="security-box">
+        <h2>Built on Trust. Powered by Security.</h2>
+
+        <p>
+            PollPulse is designed to ensure election integrity through
+            role-based access control, hashed voter tokens, one-vote
+            enforcement, and tamper-evident audit logs.
+            Your participation matters, and your vote deserves protection.
+        </p>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+
+    <div class="logo">PollPulse.</div>
+
+    <p>Your Voice. Your Choice.</p>
+
+    <p>© 2026 PollPulse. All Rights Reserved.</p>
+
+</footer>
+
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>

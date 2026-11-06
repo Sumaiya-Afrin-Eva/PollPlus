@@ -1,0 +1,418 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fc;
+    color: #172554;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #4338ca;
+}
+
+.logo span {
+    color: #172554;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+}
+
+.nav-links a:hover {
+    color: #4338ca;
+}
+
+.login-btn {
+    padding: 11px 23px;
+    background: #4338ca;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Hero */
+.hero {
+    padding: 95px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: linear-gradient(120deg, #eef2ff, #f8faff);
+}
+
+.hero-content {
+    max-width: 570px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 9px 15px;
+    background: #e0e7ff;
+    color: #4338ca;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 22px;
+    color: #172554;
+}
+
+.hero h1 span {
+    color: #4f46e5;
+}
+
+.hero p {
+    color: #64748b;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 15px 25px;
+    border-radius: 9px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #4338ca;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #3730a3;
+}
+
+.secondary-btn {
+    background: white;
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
+}
+
+.secondary-btn:hover {
+    background: #eef2ff;
+}
+
+/* Voting Preview */
+.hero-visual {
+    width: 430px;
+    min-height: 310px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 45px rgba(30, 41, 100, 0.10);
+}
+
+.visual-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.visual-header h3 {
+    font-size: 17px;
+}
+
+.active-label {
+    color: #15803d;
+    background: #dcfce7;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.candidate {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e0e7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #4338ca;
+}
+
+.candidate-info {
+    flex: 1;
+}
+
+.candidate-info h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.candidate-info p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.vote-icon {
+    color: #4338ca;
+    font-size: 20px;
+}
+
+.secure-note {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Features */
+.features {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.section-description {
+    color: #64748b;
+    font-size: 15px;
+    margin-bottom: 45px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px 22px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    background: #eef2ff;
+    color: #4338ca;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 80px 8%;
+    background: #eef2ff;
+    text-align: center;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.step {
+    padding: 25px;
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4338ca;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.step h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* Security */
+.security {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.security-box {
+    background: #172554;
+    color: white;
+    padding: 55px 30px;
+    border-radius: 18px;
+}
+
+.security-box h2 {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.security-box p {
+    max-width: 650px;
+    margin: auto;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* Footer */
+footer {
+    background: #0f172a;
+    color: #cbd5e1;
+    padding: 35px 8%;
+    text-align: center;
+}
+
+footer .logo {
+    margin-bottom: 12px;
+    color: white;
+}
+
+footer p {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .feature-grid,
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .nav-links a:not(.login-btn) {
+        display: none;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .feature-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .features,
+    .how-it-works,
+    .security {
+        padding: 60px 6%;
+    }
+}
