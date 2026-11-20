@@ -1,4 +1,4 @@
-package com.pollpulse.exception;
+package com.example.pollpulse.exception;
 
 import java.util.List;
 
