@@ -1,4 +1,4 @@
-package com.pollpulse.exception;
+package com.example.pollpulse.exception;
 
 public class InvalidStateTransitionException extends RuntimeException {
     public InvalidStateTransitionException(String message) {

@@ -1,4 +1,4 @@
-package com.pollpulse.exception;
+package com.example.pollplus.exception;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.pollpulse.exception.ConflictException;
+import com.example.pollpulse.exception.GlobalExceptionHandler;
+import com.example.pollpulse.exception.ResourceNotFoundException;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
