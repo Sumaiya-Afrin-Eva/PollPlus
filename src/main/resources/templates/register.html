@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="_csrf" th:content="${_csrf.token}">
+    <meta name="_csrf_header" th:content="${_csrf.headerName}">
+    <title>PollPulse | Create account</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+</head>
+<body class="auth-page">
+<main class="auth-card">
+    <a th:href="@{/}" class="logo">Poll<span>Pulse.</span></a>
+    <h1>Create an account</h1>
+    <p class="auth-subtitle">Register as a campus voter</p>
+    <div id="alert" class="alert" role="alert"></div>
+    <form id="registerForm">
+        <label>Name<input name="name" required minlength="2" maxlength="100"></label>
+        <label>Email<input name="email" type="email" required></label>
+        <label>Department<input name="department"></label>
+        <label>Batch<input name="batch"></label>
+        <label>Hall<input name="hall"></label>
+        <label>Password<input name="password" type="password" required></label>
+        <button type="submit">Create account</button>
+    </form>
+    <p class="auth-link">Already have an account? <a th:href="@{/login}">Sign in</a></p>
+</main>
+<script>
+const form = document.getElementById('registerForm');
+const alertBox = document.getElementById('alert');
+const csrfToken = document.querySelector('meta[name="_csrf"]')?.content;
+const csrfHeader = document.querySelector('meta[name="_csrf_header"]')?.content;
+form.addEventListener('submit', async (event) => {
+    event.preventEvent?.();
+    event.preventDefault();
+    alertBox.textContent = '';
+    alertBox.className = 'alert';
+    const data = Object.fromEntries(new FormData(form).entries());
+    const headers = {'Content-Type': 'application/json'};
+    if (csrfHeader && csrfToken) headers[csrfHeader] = csrfToken;
+    try {
+        const response = await fetch('/api/auth/register', {method: 'POST', headers, body: JSON.stringify(data)});
+        if (response.status === 201) {
+            window.location.href = '/login?registered';
+            return;
+        }
+        const body = await response.json();
+        if (response.status === 400 && body.fieldErrors) {
+            alertBox.textContent = Object.entries(body.fieldErrors).map(([field, message]) => `${field}: ${message}`).join(' | ');
+        } else {
+            alertBox.textContent = body.message || 'Registration failed';
+        }
+        alertBox.classList.add('alert-error');
+    } catch (error) {
+        alertBox.textContent = 'Unable to register';
+        alertBox.classList.add('alert-error');
+    }
+});
+</script>
+</body>
+</html>
