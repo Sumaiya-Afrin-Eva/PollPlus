@@ -1,4 +1,4 @@
-package com.pollpulse.exception;
+package com.example.pollpulse.exception;
 
 public class ConflictException extends RuntimeException {
     public ConflictException(String message) {

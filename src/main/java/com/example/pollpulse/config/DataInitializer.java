@@ -1,4 +1,4 @@
-package com.pollpulse.config;
+package com.example.pollpulse.config;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
