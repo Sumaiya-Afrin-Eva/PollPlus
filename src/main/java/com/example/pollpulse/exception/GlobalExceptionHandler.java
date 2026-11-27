@@ -1,4 +1,4 @@
-package com.pollpulse.exception;
+package com.example.pollpulse.exception;
 
 import java.time.Instant;
 import java.util.LinkedHashMap;

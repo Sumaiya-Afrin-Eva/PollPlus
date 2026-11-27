@@ -32,6 +32,7 @@ const alertBox = document.getElementById('alert');
 const csrfToken = document.querySelector('meta[name="_csrf"]')?.content;
 const csrfHeader = document.querySelector('meta[name="_csrf_header"]')?.content;
 form.addEventListener('submit', async (event) => {
+    event.preventEvent?.();
     event.preventDefault();
     alertBox.textContent = '';
     alertBox.className = 'alert';
@@ -39,19 +40,14 @@ form.addEventListener('submit', async (event) => {
     const headers = {'Content-Type': 'application/json'};
     if (csrfHeader && csrfToken) headers[csrfHeader] = csrfToken;
     try {
-        const response = await fetch('/api/auth/register', {
-            method: 'POST',
-            headers,
-            body: JSON.stringify(data)
-        });
-        const body = await response.json();
+        const response = await fetch('/api/auth/register', {method: 'POST', headers, body: JSON.stringify(data)});
         if (response.status === 201) {
             window.location.href = '/login?registered';
             return;
         }
+        const body = await response.json();
         if (response.status === 400 && body.fieldErrors) {
-            alertBox.textContent = Object.entries(body.fieldErrors)
-                .map(([field, message]) => `${field}: ${message}`).join(' | ');
+            alertBox.textContent = Object.entries(body.fieldErrors).map(([field, message]) => `${field}: ${message}`).join(' | ');
         } else {
             alertBox.textContent = body.message || 'Registration failed';
         }
